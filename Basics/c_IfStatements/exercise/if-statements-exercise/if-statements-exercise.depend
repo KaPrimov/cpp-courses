@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1537192374 source:c:\projects\cpp-courses\basics\c_ifstatements\exercise\if-statements-exercise\a_sumseconds.cpp
+	<iostream>
+	<iomanip>
+
+1537193711 source:c:\projects\cpp-courses\basics\c_ifstatements\exercise\if-statements-exercise\b_bonusscore.cpp
+	<iostream>
+
