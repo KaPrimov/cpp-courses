@@ -2,22 +2,20 @@
 #include <string>
 
 using namespace std;
-static double amount = 0;
-int findCoinsTypeChangeCount(double coin) {
-	int count = 0;
-	while (amount - coin >= 0) {
-		amount -= coin;
-		count++;
-	}
+static int amount = 0;
+int findCoinsTypeChangeCount(int coin) {
+	int count = amount / coin;
+	amount %= coin;
 	return count;
 }
 
 int main() {
-	cin >> amount;
-	int count = findCoinsTypeChangeCount(2.00) + findCoinsTypeChangeCount(1.00) + findCoinsTypeChangeCount(0.5) + findCoinsTypeChangeCount(0.2) + findCoinsTypeChangeCount(0.1) + findCoinsTypeChangeCount(0.05) + findCoinsTypeChangeCount(0.02);
-	if (amount > 0) {
-		count++;
-	}
+	double initialAmount;
+	cin >> initialAmount;
+	amount = initialAmount * 100;
+	
+	int count = findCoinsTypeChangeCount(200) + findCoinsTypeChangeCount(100) + findCoinsTypeChangeCount(50) + findCoinsTypeChangeCount(20) + findCoinsTypeChangeCount(10) + findCoinsTypeChangeCount(5) + findCoinsTypeChangeCount(2) + findCoinsTypeChangeCount(1);
+	
 	cout << count;
 	return 0;
 }

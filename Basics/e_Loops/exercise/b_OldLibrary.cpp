@@ -12,14 +12,14 @@ int main() {
 	while (librarySize != -1) {
 		getline(cin, currentBook);
 		if(currentBook == searchedBook) {
-			cout << "You checked  " << count - 1 << " books and found it.";
+			cout << "You checked " << count - 1 << " books and found it.";
 			return 0;
 		}
 		librarySize--;
 		count++;
 	}
 	cout << "The book you search is not here!" << endl;
-	cout << "You checked " << count << " books." << endl;
+	cout << "You checked " << count - 1 << " books." << endl;
 	return 0;
 }
 

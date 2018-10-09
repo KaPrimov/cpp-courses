@@ -15,7 +15,6 @@ int main() {
 		days++;
 		cin >> action >> currentAmount;
 		if (action == "spend") {
-			cout << "in" << endl;
 			daysSpending++;
 			savings = max(savings - currentAmount, 0.0);
 		} else {
@@ -26,7 +25,7 @@ int main() {
 			cout << "You saved the money for " << days << " days." << endl;
 			return 0;
 		} else if (daysSpending == 5) {
-			cout << "You can't save the money" << endl;
+			cout << "You can't save the money." << endl;
 			cout << days << endl;
 			return 0;
 		}

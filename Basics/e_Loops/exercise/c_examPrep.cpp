@@ -15,6 +15,8 @@ int main() {
 	while(true) {
 		getline(cin, input);
 		if (input == "Enough") {
+			cout.setf(ios::fixed);
+			cout.precision(2);
 			cout << "Average score: " << totalScore / (double)problemsCount << endl;
 			cout << "Number of problems: " << problemsCount << endl;
 			cout << "Last problem: " << lastTaskName;
