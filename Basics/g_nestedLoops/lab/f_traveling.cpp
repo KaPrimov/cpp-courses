@@ -7,14 +7,15 @@ int main() {
 	double money = 0;
 	double tripPrice = 0;
 	while(true) {
-		cin >> input;
+		getline(cin, input);
 		if (input == "End") {
 			return 0;
 		}
 		destination = input;
-		cin >> tripPrice;
+		getline(cin, input);
+		tripPrice = stod(input);
 		while(true) {
-			cin >> input;
+			getline(cin, input);
 			if (input == "End") {
 				return 0;
 			}
