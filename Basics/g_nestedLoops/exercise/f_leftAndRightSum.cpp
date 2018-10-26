@@ -25,7 +25,7 @@ int main() {
 		}
 
 		if (rightSum == leftSum) {
-			cout << digitString << endl;
+			cout << digitString << " ";
 		}
 		rightSum = 0;
 		leftSum = 0;

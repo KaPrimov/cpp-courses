@@ -21,7 +21,7 @@ int main() {
 		}
 
 		if (oddSum == evenSum) {
-			cout << digitString << endl;
+			cout << digitString << " ";
 		}
 		oddSum = 0;
 		evenSum = 0;
