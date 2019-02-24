@@ -5,7 +5,7 @@
 #include <string>
 #include <sstream>
 
-template<typename T>
+template<class T>
 class Parser {
 	private:
 		std::istream& in;
@@ -15,14 +15,12 @@ class Parser {
 
 	bool readNext(T& next) {
 		 std::string line;
-		 std::getline(this->in, line);
-		if (line != this->endLine) {
+		 if (std::getline(this->in, line) && line != this->endLine) {
 			std::istringstream lineIn(line);
 			lineIn >> next;
 			return true;
-		} else {
-			return false;
 		}
+		return false;
 	}
 };
 

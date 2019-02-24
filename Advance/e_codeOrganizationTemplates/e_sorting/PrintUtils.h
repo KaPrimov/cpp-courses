@@ -3,6 +3,8 @@
 
 #include <vector>
 #include <iostream>
+#include <sstream>
+#include <set>
 
 template<typename T>
 void printVector(std::vector<T>& elements) {
@@ -11,4 +13,12 @@ void printVector(std::vector<T>& elements) {
 	}
 }
 
+template<typename T>
+void printContainer(typename T::iterator start, typename T::iterator end) {
+	while(start != end) {
+		std::cout << *start << " ";
+		++start;
+	}
+	std::cout << std::endl;
+}
 #endif // PRINT_UTILS_H
