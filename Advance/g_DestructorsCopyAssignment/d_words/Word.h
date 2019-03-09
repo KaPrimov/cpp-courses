@@ -1,17 +1,41 @@
-/*
- * Word.h
- *
- *  Created on: Mar 9, 2019
- *      Author: kalin
- */
+#ifndef WORD_H
+#define WORD_H
 
-#ifndef WORD_H_
-#define WORD_H_
+#include <string>
+#include <map>
+
+  std::map<std::string, int> wordsCount {};
 
 class Word {
+  std::string str;
+  bool isForRemoving;
 public:
-	Word();
-	virtual ~Word();
+  Word(std::string str) : str(str), isForRemoving(false) {
+	  ++wordsCount[this->str];
+  }
+
+  Word(const Word& other) : str(other.str), isForRemoving(true) {}
+
+  std::string getWord() const {
+	  return this->str;
+  }
+
+  size_t getCount() const {
+	  return wordsCount[this->str];
+  }
+
+  bool operator<(const Word& other) const {
+	  return this->str < other.str;
+  }
+
+  Word& operator=(const Word& other) = delete;
+
+  ~Word() {
+	  if (this->isForRemoving) {
+		  wordsCount.erase(this->str);
+	  }
+  }
 };
 
-#endif /* WORD_H_ */
+
+#endif /* WORD_H */
